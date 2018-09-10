@@ -1,7 +1,7 @@
 # weddingSite
 Wedding website for Michael Schmidgall and Melissa Nelson
 
-#Please set up a .env file with following criteria to make work:
+-Please set up a .env file with following criteria to make work:
 MONGODB_URI = xxxxxxxxxx
   connection to mongodb and mlab
 GMAIL_EMAIL = xxxxxxxxxx
@@ -11,3 +11,6 @@ GMAIL_PASS = xxxxxxxxxx
   this is your email account password
 GMAIL_RECEIVER = xxxxxxxxxx
   mail:to account
+  
+
+-nodeman to start
