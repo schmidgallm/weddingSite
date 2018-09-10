@@ -7,7 +7,6 @@ const exphbs = require("express-handlebars");
 const path = require('path');
 const mongoose = require('mongoose');
 const logger = require('morgan');
-const connection = require('./config/keys');
 
 // Init App
 const app = express();

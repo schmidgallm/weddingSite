@@ -4,7 +4,6 @@ dotenv.config();
 const express = require('express');
 const router = express.Router();
 const Contact = require('../models/contact');
-// const Keys = require('../config/keys');
 const nodemailer = require('nodemailer');
 
 //
@@ -91,7 +90,7 @@ router.post('/submit', (req, res) => {
             from: `"${req.body.name}" <${req.body.email}>`, // sender address
             to: process.env.GMAIL_RECEIVER, // list of receivers
             subject: 'New Wedding RSVP', // Subject line
-            text: 'Hello world?', // plain text body
+            text: 'Contact Info Below', // plain text body
             html: output // html body
         };
 
