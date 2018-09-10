@@ -1,4 +1,6 @@
 // Dependencies
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require("express-handlebars");
@@ -12,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // Connect to MongoDB with MLAB URI 
-mongoose.connect(connection.mongoDB.dbURI, () => {
+mongoose.connect(process.env.MONGODB_URI, () => {
     console.log('Now Connected to MongoDB');
 });
 

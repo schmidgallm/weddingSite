@@ -1,8 +1,10 @@
 // Dependencies
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const router = express.Router();
 const Contact = require('../models/contact');
-const Keys = require('../config/keys');
+// const Keys = require('../config/keys');
 const nodemailer = require('nodemailer');
 
 //
@@ -51,6 +53,7 @@ router.get('/directions', (req, res) => {
 
 // All emails from contact.handlebars are posted here in json format then sent via nodemailer
 router.post('/submit', (req, res) => {
+    console.log(res.statusCode);
     // create new document in collection
     Contact.create(req.body)
         .then(dbContact => {
@@ -74,8 +77,8 @@ router.post('/submit', (req, res) => {
             port: 465,
             secure: true, // true for 465, false for other ports
             auth: {
-                user: Keys.gmail.email, // generated ethereal user
-                pass: Keys.gmail.pass // generated ethereal password
+                user: process.env.GMAIL_EMAIL, // generated ethereal user
+                pass: process.env.GMAIL_PASS // generated ethereal password
             },
             tls: {
                 rejectUnauthorized: false
@@ -86,7 +89,7 @@ router.post('/submit', (req, res) => {
         // setup email data with unicode symbols
         let mailOptions = {
             from: `"${req.body.name}" <${req.body.email}>`, // sender address
-            to: Keys.gmail.receiver, // list of receivers
+            to: process.env.GMAIL_RECEIVER, // list of receivers
             subject: 'New Wedding RSVP', // Subject line
             text: 'Hello world?', // plain text body
             html: output // html body
