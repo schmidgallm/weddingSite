@@ -1,0 +1,73 @@
+#rsvp {
+    z-index: 10;
+    color: #fff;
+}
+
+#title {
+    font-family: 'Dawning of a New Day', cursive;
+}
+
+.section-header {
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 4em;
+}
+
+#my-nav {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    display: flex;
+    z-index: 10000000;
+}
+
+#my-nav a {
+    margin: 0 10px;
+    background-color: white;
+}
+
+#my-nav a:first-child{
+    background-color: #EF6480;
+}
+
+.form-submit {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submit-button {
+    margin-top: 20px;
+}
+
+.copyright {
+    text-align: center;
+}
+
+#success-message,
+#email-message {
+    color: #EF6480;
+}
+
+#table-header {
+    text-align: center;
+    margin: 25px auto;
+}
+
+.table-wrapper {
+    width: 75%;
+    margin: 10px auto;
+}
+
+#map {
+    height: 600px;
+    width: 75%;
+    margin: 20px auto;
+  }
+
+@media all and (max-width: 750px){
+    .form-submit {
+        width: 75%;
+    }
+}
