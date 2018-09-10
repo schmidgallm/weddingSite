@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Schmidgall Wedding</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day" rel="stylesheet">
+
+</head>
+
+<body>
+
+  {{{body}}}
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 33.7055913, lng: -112.2249198 },
+        zoom: 11
+      });
+      var marker = new google.maps.Marker({
+          position: { lat: 33.7055913, lng: -112.2249198 },
+          map: map,
+          title: 'Schmidgall Wedding!',
+          content: '<h2>Schmidgall Wedding</h2>'
+      });
+    }
+  </script>
+  {{!-- <script src="assets/js/maps.js"></script> --}}
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTFtCT84JDiUpp018ned6oK9j9cBFk20I&callback=initMap" async defer></script>
+
+
+</body>
+
+</html>
