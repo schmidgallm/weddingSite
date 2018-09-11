@@ -1,5 +1,5 @@
 # weddingSite
-Wedding website for Michael Schmidgall and Melissa Nelson
+Wedding website with rsvp using nodemailer and mongodb 
 
 #Please set up a .env file with following criteria to make work:
 MONGODB_URI = xxxxxxxxxx
@@ -11,7 +11,7 @@ GMAIL_EMAIL = xxxxxxxxxx
 
 GMAIL_PASS = xxxxxxxxxx
   this is your email account password
-  
+
 GMAIL_RECEIVER = xxxxxxxxxx
   mail:to account
   
