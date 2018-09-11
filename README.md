@@ -16,4 +16,5 @@ GMAIL_RECEIVER = xxxxxxxxxx
   mail:to account
   
 
--nodeman to start 
+start:
+  npm-start or nodemon 
