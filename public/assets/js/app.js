@@ -25,7 +25,7 @@ $(document).ready(() => {
         $.ajax('/submit', {
             method: 'POST',
             data: newMsg
-        }).then(() => {
+        }).then( function () {
             swal({
                     title: "Message Has Beent Sent!",
                     text: "See You There!!",
