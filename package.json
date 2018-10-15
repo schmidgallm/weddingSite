@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "watch": "nodemon server.js",
-    "build": "npm run build"
+    "watch": "nodemon server.js"
   },
   "author": "Michael Schmidgall",
   "license": "MIT",
