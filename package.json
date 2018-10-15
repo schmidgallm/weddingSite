@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm start",
-    "watch": "nodemon server.js",
-    "build": "npm start",
-    "deployment": "npm start"
+    "watch": "nodemon server.js"
   },
   "author": "Michael Schmidgall",
   "license": "MIT",
