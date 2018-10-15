@@ -4,9 +4,9 @@
   "description": "michael schmidgall portfolio",
   "main": "server.js",
   "scripts": {
-    "build": "npm start",
     "start": "node server.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "build": "npm run build"
   },
   "author": "Michael Schmidgall",
   "license": "MIT",

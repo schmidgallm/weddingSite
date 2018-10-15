@@ -20,6 +20,11 @@ mongoose.connect(process.env.MONGODB_URI, () => {
 // Set static content to public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// // Init static assets
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('./client/build'));
+}
+
 // User morgan to log all requests
 app.use(logger('dev'));
 
