@@ -13,7 +13,6 @@ $(document).ready(() => {
 
         // Prevent form from submitting
         e.preventDefault();
-
         // Create new message objct 
         const newMsg = {
             name: $('#name').val().trim(),
@@ -22,28 +21,27 @@ $(document).ready(() => {
         }
 
         // Ajax Post Request
-        $.ajax('/submit', {
-            method: 'POST',
+        $.ajax({
+            url: '/submit',
+            type: 'POST',
             data: newMsg
-        }).then( function () {
+        }).then((rsp) => {
+            console.log(rsp);
+            console.log("ajax called");
+            $('#name').empty();
+            $('#email').empty();
+            $('#message').empty();
+
+            $('#name').focus();
             swal({
-                    title: "Message Has Beent Sent!",
-                    text: "See You There!!",
-                    icon: "success",
-                    button: "Aww yiss!",
-                })
-                .then(() => {
-
-                    // clear input values
-                    $('#name').empty();
-                    $('#email').empty();
-                    $('#message').empty();
-
-                    //show success message
-                    $('#success-message').show().addClass('animated slideInLeft success-message-color');
-
-                    $('#name').focus();
-                });
+                title: "Message Has Beent Sent!",
+                text: "See You There!!",
+                icon: "success",
+                button: "Aww yiss!",
+            }).then( function() {
+                //show success message
+            $('#success-message').show().addClass('animated slideInLeft success-message-color');
+            })
         });
     }
 });

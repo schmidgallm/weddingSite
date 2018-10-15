@@ -41,9 +41,13 @@
     text-align: center;
 }
 
-#success-message,
 #email-message {
     color: #EF6480;
+}
+
+#success-message {
+    color: #EF6480;
+    font-size: 16px;
 }
 
 #table-header {
