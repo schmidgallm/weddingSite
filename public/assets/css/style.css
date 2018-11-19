@@ -60,14 +60,72 @@
     margin: 10px auto;
 }
 
+hr {
+    width: 75%;
+    margin: 10px auto;
+
+}
 #map {
     height: 600px;
     width: 75%;
     margin: 20px auto;
-  }
+}
+
+.notes {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.registry {
+    width: 100%;
+    text-align: center;
+}
+
+.stores {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.store {
+    margin-top: 20px;
+    display: inline-block;
+    width: 33%;
+}
+
+.store-img {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.store-img img {
+    width: 75%;
+    margin: 0 auto;
+}
+
 
 @media all and (max-width: 750px){
     .form-submit {
         width: 75%;
+    }
+}
+
+@media all and (max-width: 800px){
+    .stores{
+        display: block;
+    }
+    .store {
+        width: 80%;
+    }
+    .store-img {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    .store-img img {
+        width: 25%;
     }
 }

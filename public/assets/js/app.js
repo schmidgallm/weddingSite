@@ -24,24 +24,27 @@ $(document).ready(() => {
         $.ajax({
             url: '/submit',
             type: 'POST',
-            data: newMsg
+            data: newMsg,
+            success: messageSent()
         }).then((rsp) => {
             console.log(rsp);
             console.log("ajax called");
-            $('#name').empty();
-            $('#email').empty();
-            $('#message').empty();
+        });
+    }
 
+    function messageSent(){
+        swal({
+            title: "Message Has Beent Sent!",
+            text: "See You There!!",
+            icon: "success",
+            button: "Aww yiss!",
+        }).then( function() {
+            //show success message
+            $('#name').val('');
+            $('#email').val('');
+            $('#message').val('');
             $('#name').focus();
-            swal({
-                title: "Message Has Beent Sent!",
-                text: "See You There!!",
-                icon: "success",
-                button: "Aww yiss!",
-            }).then( function() {
-                //show success message
             $('#success-message').show().addClass('animated slideInLeft success-message-color');
-            })
         });
     }
 });

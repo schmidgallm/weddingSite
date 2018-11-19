@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // Connect to MongoDB with MLAB URI 
-mongoose.connect(process.env.MONGODB_URI, () => {
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => {
     console.log('Now Connected to MongoDB');
 });
 
