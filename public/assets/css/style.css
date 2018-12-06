@@ -170,6 +170,24 @@ hr {
     width: 100%;
 }
 
+.menu {
+    width: 100%;
+    height: 100vh;
+}
+
+.menu h2 {
+    color: #EF6480;
+}
+.menu-content {
+    text-align: center;
+    width: 65%; 
+    margin: 0 auto;
+}
+
+.menu-image {
+    width: 70%;
+    margin: 0 auto;
+}
 @media all and (max-width: 800px){
     .stores{
         display: block;
