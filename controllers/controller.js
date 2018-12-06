@@ -4,7 +4,7 @@ dotenv.config();
 const express = require('express');
 const router = express.Router();
 const Contact = require('../models/contact');
-const nodemailer = require('nodemailer');
+const Comment = require('../models/comment');
 
 //
 /* GET ROUTES */
@@ -49,23 +49,54 @@ router.get('/melissa', (req, res) => {
         })
 });
 
+// Melissa's route -- rutrns db data then populates data into table -- render melissa.handlebars
+router.get('/comments', (req, res) => {
+    Comment.find({})
+        .then(dbContact => {
+            const comtObj = {
+                comment: dbContact
+            }
+            res.render('comments', comtObj);
+        })
+        .catch(err => {
+            res.json(err);
+        })
+});
+
 // Directions route handles google map route -- render directions.handlebars
 router.get('/directions', (req, res) => {
     res.render('directions');
 });
 
+// Comments route handles all comments using socket.io -- render comments.handlebars
+router.get('/comments', (req, res) => {
+    res.render('comments');
+});
 
 //
 /* POST ROUTES */
 //
 
-// All emails from contact.handlebars are posted here in json format then sent via nodemailer
+// All emails from contact.handlebars are posted here
 router.post('/submit', (req, res) => {
     // create new document in collection
     Contact.create(req.body)
         .then((dbPost) => {
             // Log user post
             console.log(dbPost);
+        })
+        .catch((err) => {
+            res.json(err);
+        });
+});
+
+// All comments from comments.handlebars are posted here
+router.post('/commentsubmit', (req, res) => {
+    // create new document in collection
+    Comment.create(req.body)
+        .then((dbComment) => {
+            // Log user post
+            console.log(dbComment);
         })
         .catch((err) => {
             res.json(err);

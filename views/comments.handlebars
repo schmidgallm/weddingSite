@@ -1,0 +1,38 @@
+<div class="comment-section">
+    <div class="comment-submit">
+        <h2 class="align-center">Leave A Comment for Everyone</h2>
+        <hr />
+        <form action="/commentsubmit" method="POST">
+            <div id="success-comment-message">
+                <span>Message Has Been Sent!</span>
+            </div>
+            <div class="field half first">
+                <label>Name</label>
+                <input id="comment-name" type="text" placeholder="Name">
+            </div>
+            <div class="field">
+                <label>Message</label>
+                <textarea id="comment-message" rows="6" placeholder="Message"></textarea>
+            </div>
+            <ul class="actions align-center submit-button">
+                <li><button id="comment-submit" class="button special" type="submit">Submit</button></li>
+            </ul>
+        </form>
+        <div class="copyright">
+            &copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>.
+            Video <a href="http://coverr.co/">Coverr</a>.
+        </div>
+    </div>
+    <div class="comments">
+        <div class="comment-messages">
+            {{#each comment}}
+                <div class="comment-list">
+                    <p class="comment-list-name">name: {{name}}</p>
+                    <p class="comment-list-comment">{{comment}}</p>
+                    <hr>
+                </div>
+            {{/each}}
+        </div>
+
+    </div>
+</div>
